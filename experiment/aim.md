@@ -1,8 +1,8 @@
 A private-key encryption scheme consists of a set of all possible messages, called the message space **M**, and three algorithms, namely,
 
-    (a) **Gen**
-    (b) **Enc**
-    (c) **Dec**
+ (a) **Gen**
+ (b) **Enc**
+ (c) **Dec**
 
 The algorithm for key generation **Gen** is used to choose a key **k** at random from the set of all possible secert keys, denoted by the key space **K**.
 
