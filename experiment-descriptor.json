@@ -36,10 +36,10 @@
     },
     {
       "target": "assignment.html",
-      "source": "assignment.md",
+      "source": "assignment/index.html",
       "label": "Assignment",
       "unit-type": "task",
-      "content-type": "text"
+      "content-type": "simulation"
     },
     {
       "target": "references.html",
