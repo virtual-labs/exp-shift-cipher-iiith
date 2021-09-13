@@ -39,7 +39,7 @@
       "source": "assignment/index.html",
       "label": "Assignment",
       "unit-type": "task",
-      "content-type": "simulation"
+      "content-type": "assignment"
     },
     {
       "target": "references.html",
