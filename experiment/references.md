@@ -1,2 +1,2 @@
-- [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)
-
+- [Caesar Cipher - Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)
+- [Shift Cipher - Wolfram MathWorld](https://mathworld.wolfram.com/CaesarCipher.html)
