@@ -1,11 +1,35 @@
-**STEP 1 :** For the given ciphertext in the **PART I** of the simulation page, the first step is to decrypt it using each of the twenty-six different keys, k=0,1,...,25 and obtain the corresponding plaintexts. For decryption, you may use the tool given in the **PART III** of the simulation page.
+**STEP 1 :** Start by examining the given cipher For k=3, we obtain a meaningful plain text namely "how are you" and hence we are done.
 
-**STEP 2 :** After each decryption, you may cut-and-paste the resultant plaintext in the scratch-pad in the **(PART II)** of the simulation page, if you need to remember it.
+**Using the Simulation Tools:**
 
-**STEP 3 :** Finally, observe the plaintexts and choose the most appropriate one (the one that is a meaningful English text) as the recovered plaintext and cut-and-paste it in the text-field named **PART IV** "Solution Plaintext". Also select the corresponding key in the text-field named "Key" and click on "Check My answer" Button.
+- You can use the "Test All Shifts" button in **PART II** to automatically perform this brute force analysis
+- The frequency analysis tool can help identify patterns that suggest the correct shift value
+- The manual encryption/decryption tool in **PART III** allows you to verify specific hypotheses
+- The feedback system in **PART IV** provides immediate verification of your solutionext in **PART I** of the simulation page. You can click "Next Ciphertext" to get different challenge ciphertexts to decrypt.
 
-**STEP 4 [OPTIONAL] :** Verify that your answer is correct, by encrypting the solution plaintext with your key.
+**STEP 2 :** Use the analysis tools provided in **PART II** to help with your cryptanalysis:
 
+- **Frequency Analysis (📊)**: Analyze letter frequencies in the current ciphertext to identify patterns
+- **Test All Shifts (🔍)**: Automatically try all possible shift values (0-25) to find meaningful text
+- **Rough Work Area**: Use the text area to make notes, record your observations, and keep track of promising decryptions
+- **Clear Button (🗑️)**: Clear your rough work area when needed
+
+**STEP 3 :** Use the encryption/decryption tool in **PART III** to manually test specific shift values:
+
+- Enter text in the plaintext area
+- Select a shift value (0-25) from the dropdown
+- Click "Encrypt" to see the ciphertext result
+- Click "Decrypt" to reverse the process
+- This helps you understand how the shift cipher works and test your hypotheses
+
+**STEP 4 :** Once you've identified the correct plaintext and shift key through analysis:
+
+- Enter the decrypted plaintext in the **PART IV** solution text area
+- Select the corresponding shift key from the dropdown
+- Click "Check my answer!" to verify your solution
+- The feedback area will show whether your answer is correct and provide hints if needed
+
+**STEP 5 [OPTIONAL] :** Verify your understanding by using **PART III** to encrypt your solution plaintext with your discovered key to confirm it produces the original ciphertext.
 
 **An Example:**
 
@@ -14,25 +38,22 @@ We carry out the brute force attack as follows:
 
 For k=0:
 
-	cipher text: K R Z D U H B R X
-	plain text: k r z d u h b r x
-
+    cipher text: K R Z D U H B R X
+    plain text: k r z d u h b r x
 
 For k=1:
 
-	cipher text: K R Z D U H B R X
-	plain text: j q y c t g a q w
+    cipher text: K R Z D U H B R X
+    plain text: j q y c t g a q w
 
 For k=2:
 
-	cipher text: K R Z D U H B R X
-	plain text: l p x b s f z p v
-
+    cipher text: K R Z D U H B R X
+    plain text: i p x b s f z p v
 
 For k=3:
 
-	cipher text: K R Z D U H B R X
-	plain text: h o w a r e y o u
-
+    cipher text: K R Z D U H B R X
+    plain text: h o w a r e y o u
 
 For k=3, we obtain a meaningful plain text namely how are you and hence we are done.

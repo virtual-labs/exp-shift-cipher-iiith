@@ -1,128 +1,328 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-       <!-- Your code goes here-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shift Cipher Simulation - Virtual Labs</title>
+    <!-- Add CSS at the head of HTML file -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <style>
+      /* Simulation specific styles */
+      .content {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        max-width: 800px;
+        margin: 20px auto;
+      }
+      textarea {
+        font-family: monospace;
+        border: 1px solid #ccc;
+        padding: 8px;
+        margin: 5px 0;
+        border-radius: 3px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        resize: vertical;
+      }
+      input[type="button"] {
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin: 5px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+      }
+      input[type="button"]:hover {
+        background: #2980b9;
+      }
+      input[type="button"][onclick*="analyze"] {
+        background: #e74c3c;
+      }
+      input[type="button"][onclick*="analyze"]:hover {
+        background: #c0392b;
+      }
+      input[type="button"][onclick*="testAll"] {
+        background: #f39c12;
+      }
+      input[type="button"][onclick*="testAll"]:hover {
+        background: #e67e22;
+      }
+      input[type="button"][onclick*="clear"] {
+        background: #95a5a6;
+      }
+      input[type="button"][onclick*="clear"]:hover {
+        background: #7f8c8d;
+      }
+      select {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 14px;
+        margin: 5px 0;
+      }
+      .form-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+        width: 100%;
+      }
+      .form-row textarea {
+        flex: 1;
+        margin: 0;
+      }
+      .form-row select {
+        flex: 0 0 auto;
+        min-width: 80px;
+        margin: 0;
+      }
+      .form-row label {
+        flex: 0 0 auto;
+        font-weight: bold;
+        margin: 0;
+      }
+      hr {
+        border: none;
+        border-top: 2px solid #3498db;
+        margin: 20px 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+      .header-desc {
+        text-align: center;
+        color: #7f8c8d;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Main Content Area with Simulation -->
+      <main id="main-content">
+        <div class="content" id="experiment-article-section-4-content">
+          <p>
+            Decrypt the following ciphertext. You can use the tool beneath in
+            PART III to simulate the Shift cipher.
+          </p>
+          <hr />
 
+          <p><b>PART I</b></p>
+          <p>
+            Ciphertext to be decrypted:
+            <br />
+            <textarea cols="50" id="textarea" readonly="readonly" rows="2">
+haahjr ha khdu</textarea
+            >
+            <br />
+            <input
+              name="btnEn2"
+              onclick="Next_Shift_Test()"
+              type="button"
+              value="Next Ciphertext"
+            />
+            <br />
+          </p>
+          <br />
+          <hr />
+          <br />
 
-<div class="content" id="experiment-article-section-4-content">
-                            <!------<script type="text/javascript" src="../js/exp1.js"></script>---------------->
-                            <p>Decrypt the following ciphertext. You can use the tool beneath in PART III to simulate the Shift cipher.</p>
-                            <hr/>
-                            <p><b>PART I</b></p>
-                            <p>Ciphertext to be decrypted:
-                                <br/>
-                                <textarea cols="50" id="textarea" readonly="readonly" rows="2">haahjr ha khdu</textarea>
-                                <br/>
-                                <input name="btnEn2" onclick="Next_Shift_Test()" type="button" value="Next Ciphertext"/>
-                                <br/>
-                            </p>
-                            <br/>
-                            <hr/>
-                            <br/>
-                            <p><b>PART II</b></p>
-                            <p>Do your rough work here:
-                                <br/>
-                                <textarea cols="50" id="textarea2" name="textarea" rows="8"></textarea>
-                                <br/>
-                            </p>
-                            <!--------------break point---->
-                            <br/>
-                            <hr/>
-                            <br/>
-                            <p><b>PART III</b></p>
-                            <p> Plaintext:
-                                <br/>
-                                <textarea cols="50" id="shift_plaintext" name="shift_plaintext" rows="2">the quick brown fox</textarea>
-                                shift:
-                                <select id="shift_key" name="shift_key" size="1">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option selected="selected" value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                    <option value="24">24</option>
-                                    <option value="25">25</option>
-                                </select>
-                                <br/>
-                            </p>
-                            <p>
-                                <input name="btnEn" onclick="Shift_Encrypt('shift_plaintext', 'shift_ciphertext')" type="button" value="v Encrypt v"/>
-                                <input name="btnDe" onclick="Shift_Decrypt('shift_ciphertext','shift_plaintext')" type="button" value="^ Decrypt ^"/>
-                            </p>
-                            <p>Ciphertext
-                                <br/>
-                                <textarea cols="50" id="shift_ciphertext" name="shift_ciphertext" rows="2"></textarea>
-                                <br/>
-                            </p>
-                            <br/>
-                            <hr/>
-                            <br/>
-                            <p><b>PART IV</b></p>
-                            <p>Enter your solution Plaintext and shift key here:
-                                <br/>
-                                <textarea cols="50" id="textarea3" name="textarea3" rows="2"></textarea>
-                                Key
-                                <select id="select_ans_shift" name="select" size="1">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                    <option value="24">24</option>
-                                    <option value="25">25</option>
-                                    <option selected="selected" value="-1">_</option>
-                                </select>
-                                <br/>
-                            </p>
-                            <p>
-                                <input name="checkAnswer" onclick="CheckAnswer()" type="button" value="Check my answer!"/> </p>
-                            <textarea cols="50" id="notification" name="notification" rows="1" style="border: 0pt none ;"></textarea>
-                        </div>
+          <p><b>PART II</b></p>
+          <p>
+            Do your rough work here:
+            <br />
+            <textarea
+              cols="50"
+              id="textarea2"
+              name="textarea"
+              rows="8"
+              placeholder="Use this space for your calculations, notes, and analysis..."
+            ></textarea>
+            <br />
+            <b>Analysis Tools:</b>
+            <br />
+            <input
+              type="button"
+              onclick="analyzeFrequency()"
+              value="📊 Frequency Analysis"
+              title="Analyze letter frequencies in the current ciphertext"
+            />
+            <input
+              type="button"
+              onclick="testAllShifts()"
+              value="🔍 Test All Shifts"
+              title="Try all possible shift values to find meaningful text"
+            />
+            <input
+              type="button"
+              onclick="clearRoughWork()"
+              value="🗑️ Clear"
+              title="Clear the rough work area"
+            />
+          </p>
+          <br />
+          <hr />
+          <br />
 
-       
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="js/exp1.js" type="text/javascript"></script>
-</body>
+          <p><b>PART III</b></p>
+          <p>
+            Plaintext:
+            <br />
+            <textarea
+              cols="50"
+              id="shift_plaintext"
+              name="shift_plaintext"
+              rows="2"
+            >the quick brown fox</textarea>
+            <br />
+            <div class="form-row">
+              <label>shift:</label>
+              <select id="shift_key" name="shift_key" size="1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option selected="selected" value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+              </select>
+            </div>
+          </p>
+          <p>
+            <input
+              name="btnEn"
+              onclick="Shift_Encrypt('shift_plaintext', 'shift_ciphertext')"
+              type="button"
+              value="v Encrypt v"
+            />
+            <input
+              name="btnDe"
+              onclick="Shift_Decrypt('shift_ciphertext','shift_plaintext')"
+              type="button"
+              value="^ Decrypt ^"
+            />
+          </p>
+          <p>
+            Ciphertext
+            <br />
+            <textarea
+              cols="50"
+              id="shift_ciphertext"
+              name="shift_ciphertext"
+              rows="2"
+            ></textarea>
+            <br />
+          </p>
+          <br />
+          <hr />
+          <br />
+
+          <p><b>PART IV</b></p>
+          <p>
+            <div class="form-row">
+              <label>Enter your solution:</label>
+            </div>
+            <textarea
+              cols="50"
+              id="textarea3"
+              name="textarea3"
+              rows="2"
+              placeholder="Enter the decrypted plaintext here..."
+            ></textarea>
+            <br />
+            <div class="form-row">
+              <label>Key:</label>
+              <select id="select_ans_shift" name="select" size="1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option selected="selected" value="-1">_</option>
+              </select>
+            </div>
+          </p>
+          <p>
+            <input
+              name="checkAnswer"
+              onclick="CheckAnswer()"
+              type="button"
+              value="Check my answer!"
+            />
+          </p>
+          <textarea
+            cols="50"
+            id="notification"
+            name="notification"
+            rows="3"
+            style="
+              border: 1px solid #ddd;
+              background: #f9f9f9;
+              font-family: Arial, sans-serif;
+              resize: vertical;
+            "
+            readonly
+            placeholder="Feedback will appear here..."
+          ></textarea>
+        </div>
+      </main>
+    </div>
+
+    <!-- Add JS at the bottom of HTML file -->
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
 </html>
