@@ -1,2 +1,6 @@
-- [Caesar Cipher - Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)
-- [Shift Cipher - Wolfram MathWorld](https://mathworld.wolfram.com/CaesarCipher.html)
+1. [Caesar Cipher - Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)
+2. [Shift Cipher - Wolfram MathWorld](https://mathworld.wolfram.com/CaesarCipher.html)
+3. [Introduction to Modern Cryptography by Jonathan Katz and Yehuda Lindell](https://www.cs.umd.edu/~jkatz/imc.html)
+4. [Cryptography and Network Security by William Stallings](https://www.pearson.com/us/higher-education/program/Stallings-Cryptography-and-Network-Security-Principles-and-Practice-7th-Edition/PGM1744575.html)
+5. [Julius Caesar's Military Communications](https://www.britannica.com/biography/Julius-Caesar)
+6. [The Codebreakers by David Kahn](https://www.amazon.com/Codebreakers-Comprehensive-History-Communication-Internet/dp/0684831309)

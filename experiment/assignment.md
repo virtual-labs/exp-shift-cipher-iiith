@@ -1,25 +1,25 @@
-**Solve the following using TOOL given below:**
+Use the **PART III** provided in the simulation page to solve the following problems. The tool includes a shift cipher calculator and a workspace for your analysis.
 
-1. Encrypt the following plain text using key k = 7.
-    Plain Text : Lord Rama was a good king.
+**1. Encrypt the following plaintext using key k= 7.**
 
-2. Given a plain text and its corresponding cipher text, find out the key used for the encryption of the plain text.
+Given:
 
-    Plain Text : abcdefghijklmnopqrstuvwxyz
-    Cipher Text : TDNUCBZROHLGYVFPWIXSEKAMQJ
+- **Plaintext:** `Lord Rama was a good king.`
+- **Key:** k = 7
 
+**2.Given a plaintext and its corresponding ciphertext, determine the key used for encryption.**
 
-3. How many different keys are possible with an n-letter alphabet?
+Given:
 
-4. Given a cipher text, find out the corresponding plain text using brute force attack.
-    Cipher text : HAAHJR HA KHDU
+- **Plaintext:** `abcdefghijklmnopqrstuvwxyz`
+- **Ciphertext:** `tuvwxyzabcdefghijklmnopqrs`
 
-TOOL
+Hint: Compare the first few letters: a→t, b→u, c→v...
 
-Plaintext:
-the quick brown fox shift:
+**3. How many different keys are possible with an n-letter alphabet?**
 
+**4. For English alphabet (n=26): How many distinct keys exist?**
 
-Ciphertext
+**5. Decrypt the following ciphertext using brute force attack.**
 
-
+Given: Ciphertext: `HAAHJR HA KHDU`

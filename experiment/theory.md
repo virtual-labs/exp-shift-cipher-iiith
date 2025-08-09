@@ -2,7 +2,7 @@ For a very brief theory of shift ciphers and their analysis, click [here](docs/s
 
 The shift cipher, also known as the Caesar cipher, is one of the oldest and simplest encryption techniques. It was used by Julius Caesar to protect military communications. This cipher is a type of substitution cipher where each letter in the plaintext is shifted a certain number of positions down the alphabet.
 
-## How It Works
+### How It Works
 
 1. **Key Space**: The key is a number between 0 and 25 (for English alphabet)
 2. **Encryption**: Each letter is shifted by the key value
@@ -10,7 +10,7 @@ The shift cipher, also known as the Caesar cipher, is one of the oldest and simp
 3. **Decryption**: Each letter is shifted back by the key value
    - Example: With key=3, 'D' becomes 'A', 'E' becomes 'B', etc.
 
-## Mathematical Representation
+### Mathematical Representation
 
 - For encryption: c = (p + k) mod 26
 - For decryption: p = (c - k) mod 26
@@ -19,7 +19,7 @@ The shift cipher, also known as the Caesar cipher, is one of the oldest and simp
 - c is the ciphertext letter (0-25)
 - k is the key (0-25)
 
-## Security Analysis
+### Security Analysis
 
 The shift cipher has several weaknesses:
 
@@ -29,7 +29,7 @@ The shift cipher has several weaknesses:
 
 <img src="images/image1.png">
 
-## Breaking the Cipher
+### Breaking the Cipher
 
 The shift cipher can be broken using:
 
