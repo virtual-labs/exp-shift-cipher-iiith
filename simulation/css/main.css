@@ -1,0 +1,238 @@
+/* Shift Cipher Simulation - MAC-Style Layout */
+
+/* Base Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Main Container */
+.content {
+  max-width: 1000px;
+  margin: 20px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e8ed;
+}
+
+/* Section Headers */
+h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Form Tables */
+.form-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+.form-table td {
+  padding: 8px 0;
+  vertical-align: top;
+}
+
+.form-table td:first-child {
+  padding-right: 15px;
+}
+
+/* Text Areas */
+textarea {
+  width: 100%;
+  min-width: 300px;
+  max-width: 100%;
+  padding: 12px;
+  border: 2px solid #e1e8ed;
+  border-radius: 6px;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  background: #fafbfc;
+  transition: all 0.3s ease;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+textarea[readonly] {
+  background: #f8f9fa;
+  color: #495057;
+  cursor: default;
+}
+
+/* Select Dropdowns */
+select {
+  padding: 8px 12px;
+  border: 2px solid #e1e8ed;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+select:hover {
+  border-color: #4a90e2;
+}
+
+/* Button Styles */
+button,
+input[type="button"] {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  margin: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover,
+input[type="button"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active,
+input[type="button"]:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Primary Action Buttons (Green) */
+button[onclick*="Encrypt"],
+button[onclick*="Decrypt"] {
+  background: #28a745;
+  color: white;
+}
+
+button[onclick*="Encrypt"]:hover,
+button[onclick*="Decrypt"]:hover {
+  background: #218838;
+}
+
+/* Analysis Tool Buttons (Orange) */
+button[onclick*="analyze"],
+button[onclick*="testAll"] {
+  background: #fd7e14;
+  color: white;
+}
+
+button[onclick*="analyze"]:hover,
+button[onclick*="testAll"]:hover {
+  background: #e55a00;
+}
+
+/* Navigation/Secondary Buttons (Gray) */
+button[onclick*="Next"],
+button[onclick*="clear"] {
+  background: #6c757d;
+  color: white;
+}
+
+button[onclick*="Next"]:hover,
+button[onclick*="clear"]:hover {
+  background: #5a6268;
+}
+
+/* Submit/Check Buttons (Red) */
+button[onclick*="Check"] {
+  background: #dc3545;
+  color: white;
+}
+
+button[onclick*="Check"]:hover {
+  background: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .content {
+    margin: 0;
+    border-radius: 8px;
+  }
+
+  .form-table td {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  textarea {
+    min-width: 250px;
+  }
+
+  button,
+  input[type="button"] {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* Section-specific enhancements */
+div[style*="background: #f0f8ff"] h3 {
+  color: #4a90e2;
+}
+
+div[style*="background: #fffbf0"] h3 {
+  color: #fd7e14;
+}
+
+div[style*="background: #f0fff0"] h3 {
+  color: #28a745;
+}
+
+div[style*="background: #fff0f0"] h3 {
+  color: #dc3545;
+}
+
+/* Accessibility */
+button:focus,
+input[type="button"]:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+/* Animation for smooth transitions */
+* {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}

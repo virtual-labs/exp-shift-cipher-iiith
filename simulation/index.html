@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shift Cipher Simulation - Virtual Labs</title>
+    <!-- Add CSS at the head of HTML file -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="content" id="experiment-article-section-4-content">
+      <!-- PART I: Challenge Section (Light Blue) -->
+      <div
+        style="
+          background: #f0f8ff;
+          padding: 15px;
+          border-radius: 8px;
+          margin: 15px 0;
+          border: 2px solid #4a90e2;
+        "
+      >
+        <h3>🎯 PART I - Decryption Challenge</h3>
+        <p>
+          Decrypt the following ciphertext. You can use the tool beneath in PART
+          III to simulate the Shift cipher.
+        </p>
+
+        <table class="form-table">
+          <tr>
+            <td><strong>Ciphertext to be decrypted:</strong></td>
+          </tr>
+          <tr>
+            <td>
+              <textarea cols="50" id="textarea" readonly="readonly" rows="2">
+haahjr ha khdu</textarea
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button
+                name="btnEn2"
+                onclick="Next_Shift_Test()"
+                style="
+                  background: #6c757d;
+                  color: white;
+                  border: none;
+                  padding: 10px 15px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin: 5px;
+                "
+              >
+                🔄 Next Ciphertext
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- PART II: Work Area Section (Light Yellow) -->
+      <div
+        style="
+          background: #fffbf0;
+          padding: 15px;
+          border-radius: 8px;
+          margin: 15px 0;
+          border: 2px solid #fd7e14;
+        "
+      >
+        <h3>📝 PART II - Analysis Workspace</h3>
+        <p>Do your rough work here:</p>
+
+        <table class="form-table">
+          <tr>
+            <td>
+              <textarea
+                cols="50"
+                id="textarea2"
+                name="textarea"
+                rows="8"
+                placeholder="Use this space for your calculations, notes, and analysis..."
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Analysis Tools:</strong><br />
+              <button
+                type="button"
+                onclick="analyzeFrequency()"
+                style="
+                  background: #fd7e14;
+                  color: white;
+                  border: none;
+                  padding: 8px 12px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin: 5px;
+                "
+                title="Analyze letter frequencies in the current ciphertext"
+              >
+                📊 Frequency Analysis
+              </button>
+              <button
+                type="button"
+                onclick="testAllShifts()"
+                style="
+                  background: #fd7e14;
+                  color: white;
+                  border: none;
+                  padding: 8px 12px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin: 5px;
+                "
+                title="Try all possible shift values to find meaningful text"
+              >
+                🔍 Test All Shifts
+              </button>
+              <button
+                type="button"
+                onclick="clearRoughWork()"
+                style="
+                  background: #6c757d;
+                  color: white;
+                  border: none;
+                  padding: 8px 12px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin: 5px;
+                "
+                title="Clear the rough work area"
+              >
+                🗑️ Clear
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- PART III: Simulation Tools Section (Light Green) -->
+      <div
+        style="
+          background: #f0fff0;
+          padding: 15px;
+          border-radius: 8px;
+          margin: 15px 0;
+          border: 2px solid #28a745;
+        "
+      >
+        <h3>🔧 PART III - Shift Cipher Simulator</h3>
+
+        <table class="form-table">
+          <tr>
+            <td><strong>Plaintext:</strong></td>
+          </tr>
+          <tr>
+            <td>
+              <textarea
+                cols="50"
+                id="shift_plaintext"
+                name="shift_plaintext"
+                rows="2"
+              >
+attack at dawn</textarea
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Shift:</strong>
+              <select id="shift_key" name="shift_key" size="1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button
+                name="btnEn"
+                onclick="Shift_Encrypt('shift_plaintext', 'shift_ciphertext')"
+                style="
+                  background: #28a745;
+                  color: white;
+                  border: none;
+                  padding: 10px 15px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin: 5px;
+                "
+              >
+                🔒 Encrypt ↓
+              </button>
+              <button
+                name="btnDe"
+                onclick="Shift_Decrypt('shift_ciphertext','shift_plaintext')"
+                style="
+                  background: #28a745;
+                  color: white;
+                  border: none;
+                  padding: 10px 15px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin: 5px;
+                "
+              >
+                🔓 Decrypt ↑
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Ciphertext:</strong></td>
+          </tr>
+          <tr>
+            <td>
+              <textarea
+                cols="50"
+                id="shift_ciphertext"
+                name="shift_ciphertext"
+                rows="2"
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- PART IV: Solution Section (Light Red) -->
+      <div
+        style="
+          background: #fff0f0;
+          padding: 15px;
+          border-radius: 8px;
+          margin: 15px 0;
+          border: 2px solid #dc3545;
+        "
+      >
+        <h3>✅ PART IV - Submit Your Solution</h3>
+
+        <table class="form-table">
+          <tr>
+            <td><strong>Enter your solution:</strong></td>
+          </tr>
+          <tr>
+            <td>
+              <textarea
+                cols="50"
+                id="textarea3"
+                name="textarea3"
+                rows="2"
+                placeholder="Enter the decrypted plaintext here..."
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Key:</strong>
+              <select id="select_ans_shift" name="select" size="1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option selected="selected" value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option selected="selected" value="-1">_</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button
+                name="checkAnswer"
+                onclick="CheckAnswer()"
+                style="
+                  background: #dc3545;
+                  color: white;
+                  border: none;
+                  padding: 10px 15px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin: 5px;
+                "
+              >
+                🎯 Check my answer!
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <textarea
+                cols="50"
+                id="notification"
+                name="notification"
+                rows="8"
+                style="
+                  border: 1px solid #ddd;
+                  background: #f9f9f9;
+                  font-family: Arial, sans-serif;
+                  resize: vertical;
+                "
+                readonly
+                placeholder="Feedback will appear here..."
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Add JS at the bottom of HTML file -->
+    <script src="js/mobile-detection.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+  <script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>
